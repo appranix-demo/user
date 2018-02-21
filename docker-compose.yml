@@ -1,0 +1,19 @@
+version: '2'
+
+services:
+    user:
+        build:
+            context: .
+        image: weaveworksdemos/user
+        hostname: user
+        restart: always
+        cap_drop:
+            - all
+        cap_add:
+            - NET_BIND_SERVICE
+        read_only: true
+        environment:
+            - MONGO_HOST=user-db:27017
+            - reschedule=on-node-failure
+        ports:
+            - "8080:80"
