@@ -3,7 +3,7 @@ version: '2'
 services:
     user:
         build:
-            context: .
+            context: ./docker/user/Dockerfile-release
         image: veeresh27/user
         hostname: user
         restart: always
