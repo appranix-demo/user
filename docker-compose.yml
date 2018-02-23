@@ -4,7 +4,7 @@ services:
     user:
         build:
             context: .
-        image: weaveworksdemos/user
+        image: veeresh27/user
         hostname: user
         restart: always
         cap_drop:
